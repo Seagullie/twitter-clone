@@ -12,7 +12,7 @@ class TweeetsController < ApplicationController # name is always plural and capi
 
   # GET /tweeets/1
   # GET /tweeets/1.json
-  def show
+  def show 
   end
 
   # GET /tweeets/new
