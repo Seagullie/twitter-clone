@@ -1,0 +1,137 @@
+// body {
+//   background-color: #fff;
+//   color: #333;
+//   margin: 33px; }
+
+// body, p, ol, ul, td {
+//   font-family: verdana, arial, helvetica, sans-serif;
+//   font-size: 13px;
+//   line-height: 18px; }
+
+// pre {
+//   background-color: #eee;
+//   padding: 10px;
+//   font-size: 11px; }
+
+// a {
+//   color: #000; }
+
+// a:visited {
+//   color: #666; }
+
+// a:hover {
+//   color: #fff;
+//   background-color: #000; }
+
+// th {
+//   padding-bottom: 5px; }
+
+// td {
+//   padding: 0 5px 7px; }
+
+// div.field,
+// div.actions {
+//   margin-bottom: 10px; }
+
+// #notice {
+//   color: green; }
+
+// .field_with_errors {
+//   padding: 2px;
+//   background-color: red;
+//   display: table; }
+
+// #error_explanation {
+//   width: 450px;
+//   border: 2px solid red;
+//   padding: 7px 7px 0;
+//   margin-bottom: 20px;
+//   background-color: #f0f0f0; }
+
+// #error_explanation h2 {
+//   text-align: left;
+//   font-weight: bold;
+//   padding: 5px 5px 5px 15px;
+//   font-size: 12px;
+//   margin: -7px -7px 0;
+//   background-color: #c00;
+//   color: #fff; }
+
+// #error_explanation ul li {
+//   font-size: 12px;
+//   list-style: square; }
+
+// label {
+//   display: block; }
+
+// .tweets{
+//     display: grid;
+//     grid-template-columns: 100%;
+//     grid-auto-columns: 100%;
+// }
+
+#notice{
+    margin-left: 10px;
+    opacity: 1;
+    transition-property: opacity;
+    transition-duration: 5s;
+    // the plan is to make the notice disappear after some time
+}
+
+.center-children{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.vertical{
+    flex-direction: column;
+}
+
+.horizontal{
+    flex-direction: row
+}
+
+.tweet{
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    padding: 10px;
+}
+
+.tweet .card-content{
+    width: 100%;
+}
+
+.wide-container{
+    width: 90% !important;
+}
+
+.author{
+    width: 64px;
+    min-width: 64px;
+    height: 64px;
+    min-height: 64px;
+}
+
+.author-small{
+    width: 32px;
+    min-width: 32px;
+    height: 32px;
+    min-height: 32px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.who-to-follow-suggestion{
+    display: flex;
+}
+
+.tweet .control-panel{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css')

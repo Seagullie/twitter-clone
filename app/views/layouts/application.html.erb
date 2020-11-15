@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Twittter</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+
+<%# Can't make a multiline comment :C %>
+
+    <% if (flash[:alert] and false) %>
+      <div class="notification hide"> 
+        <p class="notice"> ✔ <%= notice %></p>
+        <p class="alert"><%= alert %></p>
+      </div>
+    <% end %>
+
+
+  <nav class="nav-wrapper blue">
+    <div class="container">
+      <%= link_to root_path, class:"brand-logo" do %>
+
+        <span>Twitter Clone</span>
+
+      <% end %>
+
+      <ul class="right">
+        <li><%= link_to 'Home', root_path %></li>
+        <li><%= link_to 'Sign Up', '/users/sign_up' %></li>
+      </ul>
+    </div>
+  </nav>
+
+    
+
+    <%= yield %>
+  </body>
+</html>
+
