@@ -8,7 +8,7 @@
             <div class="card tweet hoverable">
                 <p class="author circle blue"></p>
                 <div class="card-content">
-                    <span class="card-title">Tweet Author</span>
+                    <span class="card-title"><%= individual_tweet.user.name %></span>
                     <%= individual_tweet.tweeet %>
                     <%# individual_tweet is the local variable. tweeet is the field in db. something like that %>
                     <div class="control-panel">
