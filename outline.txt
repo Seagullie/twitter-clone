@@ -36,4 +36,12 @@ Done
 
 Gravatars... should i really use it?
 
+Would be cool to implement visiting other people's profiles
+We have users controller taken by devise...
+But i will try to create one and lookup users by url with handle in it
+But i don't know how to declare a route that can handle custom subroutes
+Here is the link: https://guides.rubyonrails.org/routing.html
+This one should be it: get '/patients/:id', to: 'patients#show', as: 'patient'
+^the symbol can be replaced with whatever you want
+
 
