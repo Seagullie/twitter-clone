@@ -1,6 +1,13 @@
-<h1>Editing Tweeet</h1>
+<br>
+<br>
+<br>
+<%# too lazy specify margins %>
+<div class="container center-children vertical">
+    <%= render 'form', tweeet: @tweeet %>
 
-<%= render 'form', tweeet: @tweeet %>
+    <div>
+        <%= link_to 'Show', @tweeet %> |
+        <%= link_to 'Back', tweeets_path %>
+    </div>
 
-<%= link_to 'Show', @tweeet %> |
-<%= link_to 'Back', tweeets_path %>
+</div>

@@ -6,13 +6,13 @@ class TweeetsController < ApplicationController # name is always plural and capi
   # GET /tweeets
   # GET /tweeets.json
   def index
-    @tweeets = Tweeet.all.order("created_at DESC")
+    @tweeets = ((not user_signed_in?) ? Tweeet.all.order("created_at DESC") : current_user.tweeets.order("created_at DESC"))
     @tweet = Tweeet.new
   end
 
   # GET /tweeets/1
   # GET /tweeets/1.json
-  def show 
+  def show
   end
 
   # GET /tweeets/new
@@ -22,6 +22,7 @@ class TweeetsController < ApplicationController # name is always plural and capi
 
   # GET /tweeets/1/edit
   def edit
+    @tweet = Tweeet.find(params[:id])
   end
 
   # POST /tweeets

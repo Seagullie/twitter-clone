@@ -1,0 +1,20 @@
+<div class="col l4">
+    <div id="profile-analytics" class="card">
+        <div class="card-content">
+            <div class="name-and-handle">
+                <div class="name valign-wrapper">
+                    <p class="author circle blue"></p>
+                    <h4><%= current_user.name %></h4>
+                </div>
+
+                <div><small>@seagullie</small></div>
+            </div>
+
+            <div class="stats">
+                <div> <strong>Tweets</strong> <br> <%= current_user.tweeets.count%></div>
+                <div> <strong>Following</strong> <br> 123</div>
+                <div> <strong>Followers</strong> <br> 456</div>
+            </div>
+        </div>
+    </div>
+</div>

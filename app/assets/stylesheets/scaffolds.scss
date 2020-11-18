@@ -134,4 +134,14 @@
     justify-content: space-between;
 }
 
+.stats{
+    display: flex;
+    justify-content: space-between;
+}
+
+#profile-analytics .name h4 {
+    margin: 0;
+    margin-left: 24px;
+}
+
 @import url('https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css')

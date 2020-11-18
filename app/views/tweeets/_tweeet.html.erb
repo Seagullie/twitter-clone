@@ -1,0 +1,20 @@
+<div class="card tweet hoverable">
+    <p class="author circle blue"></p>
+    <div class="card-content">
+        <span class="card-title"><%= individual_tweet.user.name %></span>
+        <%= individual_tweet.tweeet %>
+        <%# individual_tweet is the local variable. tweeet is the field in db. something like that %>
+        <% if user_signed_in? and view == 'main' %>
+            <div class="control-panel">
+                <%= link_to 'Read',  individual_tweet %> 
+                
+                <%# ^ rendered as a gibberish. the final link just leads to /tweeets.
+                And it's supposed to lead to individual tweet 
+                The reason for that were positional args, i passed wrong thing as the first argument%>
+
+                <%= link_to 'Edit', edit_tweeet_path(individual_tweet) %>
+                <%= link_to 'Delete', individual_tweet, method: :delete, data: {confirm: "Are you sure you want to delete this tweet?"} %>
+            </div>
+        <% end %>
+    </div>
+</div>

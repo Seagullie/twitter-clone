@@ -1,9 +1,15 @@
-<p id="notice"><%= notice %></p>
+<%# <p id="notice"><%= notice %>
+<br/>
+<br/>
+<br/>
 
-<p>
-  <strong>Tweeet:</strong>
-  <%= @tweeet.tweeet %>
-</p>
+<div class='container center-children vertical' style="width: fit-content">  
+  <%# <%= @tweeet.tweeet %> 
+  <%= render 'tweeet', individual_tweet: @tweeet, view: 'not main'%>
 
-<%= link_to 'Edit', edit_tweeet_path(@tweeet) %> |
-<%= link_to 'Back', tweeets_path %>
+  <div>
+    <%= link_to 'Edit', edit_tweeet_path(@tweeet) %> |
+    <%= link_to 'Back', tweeets_path %>
+  </div>  
+</div>
+
