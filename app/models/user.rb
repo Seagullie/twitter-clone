@@ -4,7 +4,12 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :tweeets
+  validates :username, uniqueness: true
+  validates :email, uniqueness: true
 
+  has_many :tweeets
+  has_many :follows
+
+  has_one_attached :avatar
   
 end

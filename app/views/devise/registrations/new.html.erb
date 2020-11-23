@@ -1,7 +1,7 @@
 <div class="container center-children vertical">
   
   <h2 class="blue-text">Sign up</h2>
-  <div class="card" style="width: 35%">
+  <div class="card" style="width: 50%">
     <div class="card-content">
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name) ) do |f| %>
         <%= f.error_notification %>
@@ -20,6 +20,18 @@
           <%= f.input :email,
                       required: true,
                       input_html: { autocomplete: "email" }%>
+
+          
+          <div class="file-field input-field">
+            <div class="btn btn-small">
+              <span>Profile Picture</span>
+              <%= f.file_field :avatar %>
+            </div>
+            <div class="file-path-wrapper">
+              <input class="file-path validate" type="text" placeholder="Upload Your Profile Picture">
+            </div>
+          </div>
+          
           <%= f.input :password,
                       required: true,
                       hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
