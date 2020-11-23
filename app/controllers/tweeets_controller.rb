@@ -8,6 +8,7 @@ class TweeetsController < ApplicationController # name is always plural and capi
   def index
     @tweeets = ((not user_signed_in?) ? Tweeet.all.order("created_at DESC") : current_user.tweeets.order("created_at DESC"))
     @tweet = Tweeet.new
+    @user = current_user
   end
 
   # GET /tweeets/1
@@ -23,6 +24,10 @@ class TweeetsController < ApplicationController # name is always plural and capi
   # GET /tweeets/1/edit
   def edit
     @tweet = Tweeet.find(params[:id])
+    @user = current_user
+    # why is @user nill? Didn't i assign current user to it?
+    # let's try assigning these value to self. gives 'undefined method `user' for #<TweeetsController'
+    # What about making it a method then?
   end
 
   # POST /tweeets
@@ -75,5 +80,9 @@ class TweeetsController < ApplicationController # name is always plural and capi
     # Only allow a list of trusted parameters through.
     def tweeet_params
       params.require(:tweeet).permit(:tweeet)
+    end
+
+    def user
+      return current_user
     end
 end

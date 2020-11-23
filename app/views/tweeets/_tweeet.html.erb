@@ -4,7 +4,7 @@
         <span class="card-title"><%= individual_tweet.user.name %></span>
         <%= individual_tweet.tweeet %>
         <%# individual_tweet is the local variable. tweeet is the field in db. something like that %>
-        <% if user_signed_in? and view == 'main' %>
+        <% if user_signed_in? and @user == current_user %>
             <div class="control-panel">
                 <%= link_to 'Read',  individual_tweet %> 
                 

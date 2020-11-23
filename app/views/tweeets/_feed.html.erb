@@ -4,8 +4,8 @@
         <%# <h3>Tweets</h3> %>
         <%= render 'tweeets/form'%>
         <%# do i need to specify the path this way? %>
-        <% @tweeets.each do |individual_tweet|%>
-            <%= render 'tweeet', individual_tweet: individual_tweet, view: 'main'%>
+        <% tweeets.each do |individual_tweet|%>
+            <%= render 'tweeets/tweeet', individual_tweet: individual_tweet, view: 'main'%>
         <% end %>
     </div>
     

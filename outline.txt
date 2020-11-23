@@ -25,7 +25,7 @@ Logic done. But the tweeet on read page is too wide. And i don't get it why the 
 tweet on show page is too wide
 Probably cause form is inline-block, while div is block. And blocks are greedy by default
 Specified width: fit-content. Now it looks better and is centered. Don't know how. fit-content would make it so that 
-no free space is available for the content. Thus, allignment would be impossible :shrug:
+no free space is available for the content, just the minimum. Thus, alignment would be impossible :shrug:
 
 Fixing: done. Nice 
 Now on to the new features.
@@ -43,5 +43,19 @@ But i don't know how to declare a route that can handle custom subroutes
 Here is the link: https://guides.rubyonrails.org/routing.html
 This one should be it: get '/patients/:id', to: 'patients#show', as: 'patient'
 ^the symbol can be replaced with whatever you want
+Ok, routing done. Now i need to pull up the data relevant to the handle passed
+Managed to pull it up with User.find_by
+One of the final steps is to render the profile
+But if the handle matches the current_user handle, we shall simply redirect to root
+Done
+Can i render views of other controllers? SO says yes. My code says no.
+// if u use absolute path, partials should have underscore at the start ## that helps
+I want to reuse the feed view but we need to modify it first. As of now, all parts of index are hooked up to 
+the user that is logged in. We need to convert such dependencies into view params
+But the thing is that lots of the views are hooked up to their controller's corresponding methods and
+can access vars declared there (or on controller in general, i'm not sure)
+All the vars are tweet related. Since user and tweet are related models, you can get user tweets by referencing user
+But we need to hoist all the dependencies of the views up to customize them
+K. Done. But it felt kinda hacky. But looks good
 
 

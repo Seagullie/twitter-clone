@@ -2,10 +2,10 @@
 
 <section>
   <div class="container wide-container row">
-    <% if not user_signed_in?%>
+    <% if not user_signed_in? and false%>
       <%= render 'tweeets/trends' %>
     <% else %>
-      <%= render 'tweeets/profile-analytics', user: current_user %>
+      <%= render 'tweeets/profile-analytics', user: @user %>
     <% end %>
     <%= render 'tweeets/feed', tweeets: @tweeets  %>
     <%= render 'tweeets/who_to_follow' %>
