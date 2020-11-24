@@ -3,7 +3,11 @@
     <%= simple_form_for (@tweet) do |f| %>
     <% f.error_notification %>
     <div class="card tweet hoverable">
-                    <p class="author circle blue"></p>
+                    <p class="author circle blue">
+                        <% if @user.avatar.attached? %>
+                    <%= image_tag @user.avatar.variant(resize_to_fill: [64, 64]) %>
+        <% end %>
+                    </p>
                     <div class="card-content">
                         <span class="card-title">What's on your mind?</span>
                         <%= f.input :tweeet, label: "Tweet about it",

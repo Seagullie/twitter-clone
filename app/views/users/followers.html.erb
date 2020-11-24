@@ -1,0 +1,41 @@
+<p id="notice" class="blue-text"> <%= notice %></p>
+
+<section>
+  <div class="container wide-container row">
+    <% if not user_signed_in? and false%>
+      <%= render 'tweeets/trends' %>
+    <% else %>
+      <%= render 'tweeets/profile-analytics', user: @user %>
+    <% end %>
+    <div class="followList col l4" style="padding: 30px">
+      <h4 class="center"> <%= @user.name %>'s Followers</h4>
+      <ul class="vertical" style="display: flex">
+        <% @followers.each_with_index do |follower, index| %>
+          <li style = "<%= 'align-self: center' if index % 2 == 1 %>"><div class="name-and-handle" >
+                <div class="name valign-wrapper" style="justify-content:space-between">
+                    <div class="group-1 center-children">
+                        <p class="author circle blue" style="margin-right: 10px">
+                            <% if follower.avatar.attached? %>
+                                <%= image_tag follower.avatar.variant(resize_to_fill: [64, 64]) %>
+                            <% end %>
+                        </p>
+                        <div class="vertical" style="display: flex; align-items: center;">
+                          
+                          <h6><%= link_to follower.name, "/#{follower.username}" %></h6>
+                          <div><small>@<%= follower.username %></small></div>
+                        </div>
+                    </div>
+                </div>
+
+                
+              </div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+    <%= render 'tweeets/who_to_follow' %>
+  </div>
+</section>
+
+
+            

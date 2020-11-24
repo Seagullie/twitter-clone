@@ -34,12 +34,28 @@
 
       <ul class="right">
         <li class="hide"><%= link_to 'Home', root_path %></li>
+         
+          <li class="hide">
+            <div class="input-field">
+              <%# <i class="material-icons prefix">textsms</i> %>
+              <input type="text" id="autocomplete-input" class="autocomplete">
+              <label for="autocomplete-input">Autocomplete</label>
+            </div>
+          </li>
+            
 
         <% if not user_signed_in? %>
           <li><%= link_to 'Sign Up', '/users/sign_up' %></li>
           <li><%= link_to 'Log In', '/users/sign_in' %></li>
         <% else%>
-          <li><%= link_to current_user.name, edit_user_registration_path%></li>
+          <li style="display: flex; align-items: center">
+            <div class="author-small circle blue center-children">
+                <% if current_user.avatar.attached? %>
+                    <%= image_tag current_user.avatar.variant(resize_to_fill: [34, 34]) %>
+                <% end %>
+            </div>
+            <%= link_to current_user.name, edit_user_registration_path%>
+          </li>
           <li><%= link_to 'Log Out', destroy_user_session_path, method: :delete %></li>
         <% end %>
       </ul>
@@ -50,7 +66,18 @@
 
     <%= yield %>
     <script>
-        M.AutoInit();
+      $(document).ready(function(){
+        $('input.autocomplete').autocomplete({
+          data: {
+            "Apple": null,
+            "Microsoft": null,
+            "Google": null
+          },
+        });
+      
+      M.AutoInit();
+      });
+        
     </script>
   </body>
 

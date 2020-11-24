@@ -1,0 +1,19 @@
+<div class="col l4">
+    <div class="card-panel search_users ">
+
+                    <div class="">
+                        <%= form_with(url: '/users/search', method: 'get') do |f| %>
+                            <%# <i class="material-icons prefix">textsms</i> %>
+                            <%# <input type="text" id="autocomplete-input" class="autocomplete" placeholder="Search For User"> %>
+                            <%= f.text_field :search_data, class: 'autocomplete', id: "autocomplete-input", placeholder: 'Search For User and Press Enter' %>
+                            <%# , input_html: {class: 'autocomplete', id: "autocomplete-input"} %>
+                            <%# <label for="autocomplete-input">Search For User</label> %>
+                            <%# <%= link_to 'Seach', {controller: 'users', action: 'search', search_data: }, class: 'btn' %> 
+                            <%# <%= f.submit 'Search', class: 'btn btn-small right' %> 
+                            <%# ,  %>
+                        <% end %>
+                    </div>
+            
+    </div>
+
+</div>

@@ -1,5 +1,9 @@
 <div class="card tweet hoverable">
-    <p class="author circle blue"></p>
+    <p class="author circle blue">
+        <% if individual_tweet.user.avatar.attached? %>
+            <%= image_tag individual_tweet.user.avatar.variant(resize_to_fill: [64, 64]) %>
+        <% end %>
+    </p>
     <div class="card-content">
         <span class="card-title"><%= individual_tweet.user.name %></span>
         <%= individual_tweet.tweeet %>

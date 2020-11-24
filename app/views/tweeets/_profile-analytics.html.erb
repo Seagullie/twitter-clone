@@ -4,15 +4,20 @@
             <div class="name-and-handle">
                 <div class="name valign-wrapper" style="justify-content:space-between">
                     <div class="group-1 center-children">
-                        <p class="author circle blue"></p>
+                        <p class="author circle blue">
+                            <% if user.avatar.attached? %>
+                                <%= image_tag user.avatar.variant(resize_to_fill: [64, 64]) %>
+                            <% end %>
+                        </p>
                         <h4><%= user.name %></h4>
                     </div>
-                    <% if user != current_user%>
+                    <% if current_user and user != current_user%>
+                        <%# <%= console %> 
                         <% if !@is_following %>
                         <%# for some reason, question mark at the end of method name causes a syntax error. Will try parentheses next time %>
-                            <%= link_to 'Follow', {controller: "users", action: "follow", user: user}, method: :post, class: 'btn btn-small blue' %> 
+                            <%= link_to 'Follow', {controller: "users", action: "follow"}, method: :post, class: 'btn btn-small blue' %> 
                         <% else %>
-                            <%= link_to 'Unfollow', {controller: "users", action: "unfollow", user: user}, method: :post, class: 'btn btn-small blue' %> 
+                            <%= link_to 'Unfollow', {controller: "users", action: "unfollow"}, method: :post, class: 'btn btn-small blue' %> 
                         <% end %>
                     <% end %>
                 </div>
@@ -22,8 +27,8 @@
 
             <div class="stats">
                 <div> <strong>Tweets</strong> <br> <%= user.tweeets.count%></div>
-                <div> <strong>Following</strong> <br> <%= user.follows.count %></div>
-                <div> <strong>Followers</strong> <br> <%= Follow.where(is_following: user.id).count %></div>
+                <div> <strong>Following</strong> <br> <%= link_to user.follows.count, "/users/#{user.username}/followList" %></div>
+                <div> <strong>Followers</strong> <br> <%= link_to Follow.where(is_following: user.id).count, "/users/#{user.username}/followers"  %></div>
             </div>
         </div>
     </div>

@@ -7,11 +7,20 @@
       <%= f.error_notification %>
     
       <div class="form-inputs">
-        <%= f.input :email, required: true, autofocus: true %>
 
       <%= f.input :name, required: true, autofocus: true, input_html: { autocomplete: "email" }%>
+      <%# <%= f.input :username, required: true, input_html: { autocomplete: "email" }%> 
+      <%= f.input :email, required: true, autofocus: true %>
 
-      <%= f.input :username, required: true, input_html: { autocomplete: "email" }%>
+      <div class="file-field input-field">
+        <div class="btn btn-small">
+          <span>Profile Picture</span>
+          <%= f.file_field :avatar %>
+        </div>
+        <div class="file-path-wrapper">
+          <input class="file-path validate" type="text" placeholder="Upload Your Profile Picture">
+        </div>
+      </div>
 
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
           <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>

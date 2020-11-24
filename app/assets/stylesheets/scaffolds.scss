@@ -109,19 +109,23 @@
 }
 
 .author{
+    display: flex;
     width: 64px;
     min-width: 64px;
     height: 64px;
     min-height: 64px;
+    overflow: hidden;
 }
 
 .author-small{
+    display: flex;
     width: 32px;
     min-width: 32px;
     height: 32px;
     min-height: 32px;
     margin-left: 10px;
     margin-right: 10px;
+    overflow: hidden;
 }
 
 .who-to-follow-suggestion{
@@ -142,6 +146,10 @@
 #profile-analytics .name h4 {
     margin: 0;
     margin-left: 24px;
+}
+
+.input-field label{
+    pointer-events: all !important;
 }
 
 @import url('https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css')
