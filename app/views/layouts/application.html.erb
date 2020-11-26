@@ -5,9 +5,17 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'materialize-hacks', media: 'all', 'data-turbolinks-track': 'reload' %>
+
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
@@ -25,12 +33,15 @@
 
 
   <nav class="nav-wrapper blue">
-    <div class="container">
-      <%= link_to root_path, class:"brand-logo" do %>
-
-        <span>Twitter Clone</span>
-
-      <% end %>
+    <div class="container" style = "display: flex; justify-content: space-between;" >
+      <div class="brand-w-icon-container">
+        <i class="fab fa-twitter" style="margin-right: 10px"></i>
+        <%# aligning icons is a challenge on par with centering elements (that one is even easier for me) %>
+        <%= link_to 'Twitter Clone', root_path, class:"brand-logo" %>
+        <%# <i class="fas fa-twitter btn transparent" style="box-shadow: none !important;"></i> %>
+        
+      </div>
+      
 
       <ul class="right">
         <li class="hide"><%= link_to 'Home', root_path %></li>
@@ -45,8 +56,18 @@
             
 
         <% if not user_signed_in? %>
-          <li><%= link_to 'Sign Up', '/users/sign_up' %></li>
-          <li><%= link_to 'Log In', '/users/sign_in' %></li>
+          <li>
+            <%= link_to '/users/sign_up' do %>
+              Sign Up
+              <i class="fas fa-user-plus btn transparent" style="box-shadow: none !important;"></i>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to '/users/sign_in' do %>
+                Log In
+                <i class="fas fa-sign-in-alt btn transparent" style="box-shadow: none !important;"></i>
+            <% end %>
+          </li>
         <% else%>
           <li style="display: flex; align-items: center">
             <div class="author-small circle blue center-children">
@@ -56,7 +77,12 @@
             </div>
             <%= link_to current_user.name, edit_user_registration_path%>
           </li>
-          <li><%= link_to 'Log Out', destroy_user_session_path, method: :delete %></li>
+          <li>
+            <%= link_to destroy_user_session_path, method: :delete do %>
+              Sign Out
+              <i class="fas fa-sign-out-alt btn transparent" style="box-shadow: none !important;"></i>
+            <% end %>
+          </li>
         <% end %>
       </ul>
     </div>
@@ -66,17 +92,22 @@
 
     <%= yield %>
     <script>
-      $(document).ready(function(){
-        $('input.autocomplete').autocomplete({
-          data: {
-            "Apple": null,
-            "Microsoft": null,
-            "Google": null
-          },
-        });
+      // $(document).ready(function(){
+      //   $('input.autocomplete').autocomplete({
+      //     data: {
+      //       "Apple": null,
+      //       "Microsoft": null,
+      //       "Google": null
+      //     },
+      //   });
       
-      M.AutoInit();
-      });
+      // M.AutoInit();
+      // });
+      // alert('page render')
+      let notice_content = document.querySelector('#notice').innerText
+      console.log(notice_content, notice_content.length)
+      notice_content && notice_content.length != 1 ? M.toast({html: notice_content, classes: "green"}) : null
+      // 1 cause checkmark is always present
         
     </script>
   </body>
