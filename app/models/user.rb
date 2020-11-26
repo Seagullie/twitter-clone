@@ -7,9 +7,9 @@ class User < ApplicationRecord
   validates :username, uniqueness: true
   validates :email, uniqueness: true
 
-  has_many :tweeets
-  has_many :follows
+  has_many :tweeets, dependent: :destroy
+  has_many :follows, dependent: :destroy
 
-  has_one_attached :avatar
+  has_one_attached :avatar, dependent: :destroy
   
 end
