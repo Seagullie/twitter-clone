@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: twitter-pics-seagullie
+  api_key: '818394254547853'
+  api_secret: DNqda9io6_VIXFgpMCwuI4tk0VI
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: twitter-pics-seagullie
+  api_key: '818394254547853'
+  api_secret: DNqda9io6_VIXFgpMCwuI4tk0VI
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: twitter-pics-seagullie
+  api_key: '818394254547853'
+  api_secret: DNqda9io6_VIXFgpMCwuI4tk0VI
+  enhance_image_tag: true
+  static_file_support: false

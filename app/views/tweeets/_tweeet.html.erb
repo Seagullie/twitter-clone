@@ -2,6 +2,7 @@
     <p class="author circle blue">
         <% if individual_tweet.user.avatar.attached? %>
             <%= image_tag individual_tweet.user.avatar.variant(resize_to_fill: [64, 64]) %>
+            <%# <%= cl_image_tag(@user.avatar.key, width: 64, crop: :scale) %>
         <% end %>
     </p>
     <div class="card-content">

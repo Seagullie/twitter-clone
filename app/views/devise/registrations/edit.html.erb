@@ -15,7 +15,7 @@
       <div class="file-field input-field">
         <div class="btn btn-small">
           <span>Profile Picture</span>
-          <%= f.file_field :avatar %>
+          <%= f.file_field :avatar, direct_upload: true %>
         </div>
         <div class="file-path-wrapper">
           <input class="file-path validate" type="text" placeholder="Upload Your Profile Picture">
