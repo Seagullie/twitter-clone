@@ -4,9 +4,11 @@
             <%= image_tag individual_tweet.user.avatar.variant(resize_to_fill: [64, 64]) %>
         <% end %>
     </p>
-    <div class="card-content">
+    <div class="card-content truncate">
         <span class="card-title"><%= individual_tweet.user.name %></span>
-        <%= individual_tweet.tweeet %>
+        <div class='truncate'>
+            <%= individual_tweet.tweeet %>
+        </div>
         <%# individual_tweet is the local variable. tweeet is the field in db. something like that %>
         <% if user_signed_in? and @user == current_user %>
             <div class="control-panel">
