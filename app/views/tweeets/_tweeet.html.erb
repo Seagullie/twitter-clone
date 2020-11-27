@@ -5,7 +5,7 @@
         <% end %>
     </p>
     <div class="card-content truncate">
-        <span class="card-title"><%= individual_tweet.user.name %></span>
+        <span class="card-title"><%= link_to individual_tweet.user.name, "/#{individual_tweet.user.username}" %></span>
         <div class='truncate'>
             <%= individual_tweet.tweeet %>
         </div>

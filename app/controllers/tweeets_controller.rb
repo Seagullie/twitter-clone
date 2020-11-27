@@ -6,7 +6,7 @@ class TweeetsController < ApplicationController # name is always plural and capi
   # GET /tweeets
   # GET /tweeets.json
   def index
-    @tweeets = ((not user_signed_in?) ? Tweeet.all.order("created_at DESC") : current_user.tweeets.order("created_at DESC"))
+    @tweeets = ((not user_signed_in?) ? Tweeet.limit(15).order("created_at DESC") : current_user.tweeets.limit(10).order("created_at DESC"))
     @tweet = Tweeet.new
     @user = current_user
   end
