@@ -24,7 +24,7 @@ class UsersController < ApplicationController
 
         association.save
 
-        redirect_to "/#{user.username}"
+        profile
         
     end
     
@@ -33,7 +33,7 @@ class UsersController < ApplicationController
         # byebug
         association.destroy(association.ids[0])
    
-        redirect_to "/#{user.username}"
+        profile
     end
 
     def get_is_following

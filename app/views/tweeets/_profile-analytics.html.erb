@@ -3,13 +3,13 @@
         <div class="card-content">
             <div class="name-and-handle">
                 <div class="name valign-wrapper" style="justify-content:space-between">
-                    <div class="group-1 center-children truncate">
+                    <div class="group-1 center-children">
                         <p class="author circle blue">
                             <% if user.avatar.attached? %>
                                 <%= image_tag user.avatar.variant(resize_to_fill: [64, 64]) %>
                             <% end %>
                         </p>
-                        <h4 class="truncate"><%= user.name %></h4>
+                        <h4><%= user.name %></h4>
                     </div>
                     <% if current_user and user != current_user%>
                         <%# <%= console %> 
