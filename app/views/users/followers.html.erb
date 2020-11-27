@@ -7,7 +7,7 @@
     <% else %>
       <%= render 'tweeets/profile-analytics', user: @user %>
     <% end %>
-    <div class="followList col l4" style="padding: 30px">
+    <div class="followList col l4 s7" style="padding: 30px">
       <h4 class="center"> <%= @user.name %>'s Followers</h4>
       <ul class="vertical" style="display: flex">
         <% @followers.each_with_index do |follower, index| %>
