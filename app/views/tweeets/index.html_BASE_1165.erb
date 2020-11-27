@@ -1,0 +1,16 @@
+<p id="notice" class="blue-text hide"> <%= notice %></p>
+
+<section>
+  <div class="container wide-container row">
+    <% if not user_signed_in?%>
+      <%= render 'tweeets/trends' %>
+    <% else %>
+      <%= render 'tweeets/profile-analytics', user: current_user %>
+    <% end %>
+    <%= render 'tweeets/feed', tweeets: @tweeets  %>
+    <div class="col l4">
+      <%= render 'tweeets/seach_users' %>
+      <%= render 'tweeets/who_to_follow' %>
+    </div>
+  </div>
+</section>
