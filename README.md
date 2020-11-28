@@ -9,6 +9,7 @@ The project includes:
   * User search and following logic
   
 <small>pls twitter don't sue me XD</small>
+<sub><sup>pls twitter don't sue me XD</sup></sub>
   
   
 
