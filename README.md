@@ -8,7 +8,9 @@ The project includes:
   * CRUD functionality for users
   * User search and following logic
   
-<small>pls twitter don't sue me XD</small>
+The project is hosted on Heroku. User profile pictures are stored in Clodinary<br>
+<a href="https://twitter-clone4.herokuapp.com/">Link to project on Heroku</a>
+<br> 
 <sub><sup>pls twitter don't sue me XD</sup></sub>
   
   
