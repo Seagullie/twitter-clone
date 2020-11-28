@@ -2,6 +2,8 @@
 A simple twitter clone made with Ruby On Rails<br>
 Frontend was made with Materialize 
 
+<img src="twitter-clone4.herokuapp.com_ (1).png"/>
+
 The project includes:
   * CRUD functionality for tweets
   * User Authentication
