@@ -1,24 +1,13 @@
-# README
+# Twitter Clone
+A simple twitter clone made with Ruby On Rails
+Frontend was made with Materialize 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The project includes:
+  * CRUD functionality for tweets
+  * User Authentication
+  * CRUD functionality for users
+  * User search and following logic
+  
+  
+  
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
