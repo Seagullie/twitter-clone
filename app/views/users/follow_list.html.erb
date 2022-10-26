@@ -1,4 +1,4 @@
-<p id="notice" class="blue-text"> <%= notice %></p>
+<p id="notice" class="blue-text hide"> <%= notice %></p>
 
 <section>
   <div class="container wide-container row">
@@ -7,7 +7,7 @@
     <% else %>
       <%= render 'tweeets/profile-analytics', user: @user %>
     <% end %>
-    <div class="followList col l4" style="padding: 30px">
+    <div class="followList col l4 s7" style="padding: 30px">
       <h4 class="center"> People <%= @user.name %> Follows</h4>
       <ul class="vertical" style="display: flex">
         <% @follow_list.each_with_index do |follow, index| %>
@@ -33,7 +33,9 @@
         <% end %>
       </ul>
     </div>
-    <%= render 'tweeets/who_to_follow' %>
+    <div class="col l4 s5">
+      <%= render 'tweeets/who_to_follow' %>
+    </div>
   </div>
 </section>
 
