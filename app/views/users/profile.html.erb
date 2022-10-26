@@ -1,4 +1,4 @@
-<p id="notice" class="blue-text"> <%= notice %></p>
+<p id="notice" class="blue-text hide"> <%= notice %></p>
 
 <section>
   <div class="container wide-container row">
@@ -8,7 +8,7 @@
       <%= render 'tweeets/profile-analytics', user: @user %>
     <% end %>
     <%= render 'tweeets/feed', tweeets: @tweeets  %>
-    <div class="col l4">
+    <div class="col l4 s5">
       <%= render 'tweeets/who_to_follow' %>
     </div>
   </div>
