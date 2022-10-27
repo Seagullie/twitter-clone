@@ -1,4 +1,7 @@
 Rails.application.configure do
+
+  ENV['CLOUDINARY_URL'] = "cloudinary://818394254547853:DNqda9io6_VIXFgpMCwuI4tk0VI@twitter-pics-seagullie"
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
@@ -29,8 +32,8 @@ Rails.application.configure do
   end
 
   # Store uploaded files on the local file system (see config/storage.yml for options).
-  # config.active_storage.service = :local
-  config.active_storage.service = :cloudinary
+  config.active_storage.service = :local
+  # config.active_storage.service = :cloudinary
 
 
   # Don't care if the mailer can't send.
