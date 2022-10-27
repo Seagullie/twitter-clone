@@ -24,6 +24,9 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+gem 'rmagick'
+
+
 # gem 'materialize-rails', '~> 0.97.5.2' # causes sass related error 
 gem 'simple_form', '~> 5.0', '>= 5.0.3'
 gem 'devise', '~> 4.7', '>= 4.7.3'
