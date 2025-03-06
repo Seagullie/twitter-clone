@@ -10,7 +10,7 @@
     "yarn": "^1.22.19"
   },
   "scripts": {
-    "server": "rails s -p 9999"
+    "server": "rails s -p 9999 -b 0.0.0.0"
   },
   "version": "0.1.0",
   "devDependencies": {

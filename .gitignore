@@ -40,6 +40,10 @@
 # yarn-debug.log*
 # .yarn-integrity
 
+# causes lots of trouble:
+# bundle install errors out when this is just copied and not created in a natural way.
+yarn.lock
+
 outline.txt
 iofjdsoif
 revitalization.txt
