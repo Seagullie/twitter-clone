@@ -3,6 +3,7 @@ services:
   web:
     build: .
     command: ["rails", "server", "-b", "0.0.0.0"]
+    restart: unless-stopped
     volumes:
       - .:/app
     ports:
